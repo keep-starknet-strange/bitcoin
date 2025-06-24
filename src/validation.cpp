@@ -4683,13 +4683,13 @@ bool ChainstateManager::ProcessNewBlockHeaders(const std::vector<CBlockHeader>& 
     {
         LOCK(cs_main);
         // read the file stark_proof.json as bytes and use the rust function to check if the proof is valid
-        std::vector<uint8_t> proof_bytes = read_file_as_bytes("stark_proof.json");
+        fprintf(stdout, "Reading stark proof from file\n");
+        std::vector<uint8_t> proof_bytes = read_file_as_bytes("proof.json");
         rust::Slice<const uint8_t> slice(proof_bytes.data(), proof_bytes.size());
+        fprintf(stdout, "Verifying proof of block header=1\n");
         rust::String valid = verify_cairo_proof(slice, false);
-        fprintf(stderr, "Stark proof is %s\n", valid.c_str());
-        std::cerr << "Stark proof is " << valid.c_str() << std::endl;
         assert(std::strlen(valid.c_str()) == 0);
-        LogInfo("Stark proof is %s\n", valid.c_str());
+        fprintf(stdout, "Header is valid\n");
         for (const CBlockHeader& header : headers) {
             CBlockIndex* pindex = nullptr; // Use a temp pindex instead of ppindex to avoid a const_cast
             bool accepted{AcceptBlockHeader(header, state, &pindex, min_pow_checked)};

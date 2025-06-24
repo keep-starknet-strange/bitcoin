@@ -2,9 +2,7 @@
 
 use cairo_air::{PreProcessedTraceVariant, verifier::verify_cairo};
 
-use stwo_cairo_prover::stwo_prover::core::{
-    pcs::PcsConfig, vcs::blake2_merkle::Blake2sMerkleChannel,
-};
+use stwo_cairo_prover::stwo_prover::core::vcs::blake2_merkle::Blake2sMerkleChannel;
 
 #[cxx::bridge]
 mod ffi {
@@ -24,7 +22,7 @@ fn verify_cairo_proof(proof: &[u8], with_pedersen: bool) -> String {
     };
     match verify_cairo::<Blake2sMerkleChannel>(
         proof,
-        PcsConfig::default(),
+        // PcsConfig::default(),
         if with_pedersen {
             PreProcessedTraceVariant::Canonical
         } else {

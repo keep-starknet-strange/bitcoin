@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-cairo-air = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "b160127" }
-stwo_cairo_prover = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "b160127" }
+cairo-air = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "f8979ed82d86bd3408f9706a03a63c54bd221635" }
+stwo_cairo_prover = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "f8979ed82d86bd3408f9706a03a63c54bd221635" }
 serde_json = "1.0"
 cxx = "1.0"
 

@@ -1093,7 +1093,7 @@ $(top_srcdir)/$(subdir)/config/bitcoin-config.h.in:  $(am__configure_deps)
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean
-	-rm -f leveldb/*/*.gcda leveldb/*/*.gcno
+	-rm -f leveldb/*/*.gcda leveldb/*/*.gcno leveldb/helpers/memenv/*.gcda leveldb/helpers/memenv/*.gcno
 	-rm -f config.h
 	-rm -rf test/__pycache__
 
@@ -1119,7 +1119,7 @@ EXTRA_DIST += $(libbitcoin_ipc_mpgen_input)
 %.capnp:
 
 # Explicitly list dependencies on generated headers as described in
-# https://www.gnu.org/software/automake/manual/html_node/Built-Sources-Example.html
+# https://www.gnu.org/software/automake/manual/html_node/Built-Sources-Example.html#Recording-Dependencies-manually
 ipc/capnp/libbitcoin_ipc_a-protocol.$(OBJEXT): $(libbitcoin_ipc_mpgen_input:=.h)
 
 if BUILD_MULTIPROCESS
