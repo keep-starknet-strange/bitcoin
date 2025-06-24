@@ -1,0 +1,16 @@
+[package]
+name = "c-stwo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cairo-air = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "b160127" }
+stwo_cairo_prover = { git = "https://github.com/starkware-libs/stwo-cairo", rev = "b160127" }
+serde_json = "1.0"
+cxx = "1.0"
+
+[build-dependencies]
+cxx-build = "1.0"
+
+[lib]
+crate-type = ["staticlib"]

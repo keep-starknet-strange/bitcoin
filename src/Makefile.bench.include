@@ -88,6 +88,8 @@ if ENABLE_ZMQ
 bench_bench_bitcoin_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
+bench_bench_bitcoin_LDADD += $(top_builddir)/c-stwo/target/cxxbridge/c-stwo/src/bench_bench_bitcoin-lib.rs.o $(top_builddir)/c-stwo/target/release/build/cxx-66af8c9b10342fdd/out/libcxxbridge1.a $(top_builddir)/c-stwo/target/release/libc_stwo.a -lc++ -liconv -lSystem -lc -lm
+
 if ENABLE_WALLET
 bench_bench_bitcoin_SOURCES += bench/coin_selection.cpp
 bench_bench_bitcoin_SOURCES += bench/wallet_balance.cpp

@@ -1,0 +1,33 @@
+{
+    "files.associations": {
+        "*.rs": "cpp",
+        "__verbose_abort": "cpp",
+        "array": "cpp",
+        "cmath": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "cwchar": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "span": "cpp",
+        "stdexcept": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "typeinfo": "cpp",
+        "variant": "cpp",
+        "cctype": "cpp",
+        "ctime": "cpp",
+        "cwctype": "cpp",
+        "execution": "cpp",
+        "memory": "cpp",
+        "ratio": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp"
+    }
+}
